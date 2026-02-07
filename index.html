@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Question ❤️</title>
+
+<style>
+:root{
+  --bg1:#14001f;
+  --bg2:#3c096c;
+  --bg3:#9d4edd;
+  --gold:#ffd86f;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  color:white;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.12), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(0,0,0,.4), transparent 40%),
+    linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+}
+
+/* ===== sections ===== */
+section{
+  min-height:100vh;
+  max-width:900px;
+  margin:auto;
+  padding:70px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  animation:fade 1s ease;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1,h2{
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.card{
+  background:rgba(255,255,255,.10);
+  padding:20px;
+  margin:10px 0;
+  border-radius:15px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+/* next button */
+.next{
+  margin-top:40px;
+  padding:14px 30px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+  color:#7b1e3a;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.3s;
+}
+.next:hover{transform:scale(1.1);}
+
+/* ===== slider ===== */
+.slider{
+  width:330px;
+  height:75px;
+  margin:20px auto;
+  background:rgba(255,255,255,.12);
+  border-radius:50px;
+  position:relative;
+  backdrop-filter:blur(10px);
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.label{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-weight:bold;
+  font-size:.9rem;
+}
+.no{left:15px;}
+.yes{right:15px;}
+
+.knob{
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background:white;
+  color:#7b2cbf;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  position:absolute;
+  left:128px;
+  cursor:grab;
+  transition:.25s;
+}
+
+/* shake */
+.shake{animation:shake .35s;}
+@keyframes shake{
+  0%{transform:translateX(0);}
+  25%{transform:translateX(-7px);}
+  50%{transform:translateX(7px);}
+  75%{transform:translateX(-7px);}
+  100%{transform:translateX(0);}
+}
+
+/* hearts */
+.heart{
+  position:fixed;
+  top:-20px;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 -->
+<section id="s1">
+  <h1>Mujhe tumse kuch important poochna hai ❤️</h1>
+  <a class="next" href="#s2">Ready?</a>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="card">Main mazaak nahi kar raha</div>
+  <div class="card">Main serious hoon</div>
+  <div class="card">Thoda nervous bhi hoon 😅</div>
+  <a class="next" href="#s3">Aage sunogi?</a>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="card">Tum meri comfort ho</div>
+  <div class="card">Tum meri safe place ho</div>
+  <div class="card">Tum meri best habit ho 💖</div>
+  <a class="next" href="#s4">Aur…</a>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="card">
+    Agar tum mana kar dogi,<br>
+    main phir bhi tumse <b>pyaar</b> karta rahunga ❤️
+  </div>
+  <div class="card">
+    Par haan bol dogi,<br>
+    toh duniya ka sabse lucky insaan ban jaunga ✨
+  </div>
+  <a class="next" href="#s5">Bas thoda aur…</a>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="card">Tumhare saath future imagine karna easy hai 💫</div>
+  <div class="card">Tum ho toh sab simple lagta hai 🌹</div>
+  <a class="next" href="#s6">Ab pooch leta hoon…</a>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h1>Will you be mine? ❤️</h1>
+  <a class="next" href="#s7">Slide karke answer do…</a>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2>⬅️ No &nbsp;&nbsp;&nbsp; Yes ➡️</h2>
+
+  <div class="slider">
+    <span class="label no">No</span>
+    <span class="label yes">Yes</span>
+    <div class="knob" id="knob">❤</div>
+  </div>
+
+  <p id="convince" style="margin-top:18px; min-height:30px;"></p>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h1>I knew it 😌💖</h1>
+  <div class="card">Thank you for choosing me ✨</div>
+  <a class="next" href="#s9">Last one…</a>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2>❤️ Forever</h2>
+  <div class="card">
+    Ab officially…<br>
+    tum meri ho.<br>
+    Aur main tumhara 💞
+  </div>
+  <p style="margin-top:20px;font-style:italic;">
+    — From your Nonsense
+  </p>
+</section>
+
+<script>
+const knob=document.getElementById("knob");
+let startX=0;
+
+const lines=[
+"Arey sach me? 🥺",
+"Ek baar dil se soch lo ❤️",
+"Please aisa mat karo 😭",
+"Mujhe sach me tum chahiye 💖",
+"Itna torture mat do 😩",
+"Main wait kar lunga par No mat bolo 🥹",
+"Tumhare bina kaise rahunga 😭",
+"Last chance 😔",
+"Thoda sa pyaar dikha do ❤️",
+"Mat jao us taraf 😩",
+"Mujhe umeed hai tum Yes karogi 💞",
+"Please meri taraf dekho 🥺",
+"Heart break ho jayega 💔",
+"Again try karo ❤️",
+"Mujhe disappoint mat karo 😭"
+];
+
+knob.addEventListener("touchstart",e=>startX=e.touches[0].clientX);
+knob.addEventListener("touchend",e=>{
+  let endX=e.changedTouches[0].clientX;
+  handle(endX-startX);
+});
+
+knob.addEventListener("mousedown",e=>startX=e.clientX);
+knob.addEventListener("mouseup",e=>{
+  handle(e.clientX-startX);
+});
+
+function handle(diff){
+  const msg=document.getElementById("convince");
+
+  if(diff>40){ // YES
+    rain();
+    location.href="#s8";
+  }
+  else if(diff<-40){ // NO
+    knob.classList.add("shake");
+    setTimeout(()=>knob.classList.remove("shake"),350);
+    msg.innerText=lines[Math.floor(Math.random()*lines.length)];
+  }
+}
+
+function rain(){
+  for(let i=0;i<25;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerText="❤️";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=3+Math.random()*4+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+  }
+}
+</script>
+
+</body>
+</html>
